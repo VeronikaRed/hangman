@@ -1,0 +1,36 @@
+body {
+  background-color: #DEB887;
+  width: 960px;
+  margin: 0 auto;
+}
+
+.choise {
+  border: 2px solid black;
+  width: 400px;
+  float: left;
+  background-color: #FFDAB9;
+  margin: 20px 0px 0px 30px;
+  padding: 20px;
+}
+
+.input {
+  float: right;
+  margin: 30px 65px 0px 0px;
+  border: 2px solid black;
+}
+
+.touch {
+    padding: 100px 50px 0px 550px;
+}
+
+.click {
+  height: 40px;
+  width: 60px;
+  border-radius: 20%;
+  font-size: 20px;
+}
+
+#input {
+  height: 40px;
+  font-size: 30px;
+}
