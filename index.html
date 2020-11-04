@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href=css/style.css> <title>Hangman</title>
+</head>
+
+<body>
+  <div class="wrapper">
+
+    <div class="first_section">
+      <h1>Виселица</h1>
+      <p class="rools"><b>Поговорим о правилах. </b>Игра Виселица это классическая популярная во всем мире игра,
+        в которой вам необходимо отгадать скрытое слово по буквам. Количество букв в слове,
+        открываемые буквы - все это должно навести вас на мысль о правильном ответе. Во время игры
+        возможны 7 неправильных ответов. При каждом неправильном ответе (букве) к человечку на
+        виселице будет добавляться часть тела. Когда он будет полностью нарисован, вы проиграли.
+        Вы выиграете, если отгадаете все буквы в слове прежде чем висилица будет нарисована полностью.
+      Нажимай на Game start и погнали!</p>
+      <div>
+        <div id="secret_word"></div>
+      </div>
+    </div>
+
+<div class="starter">Hello</div>
+
+
+    <div class="second_section">
+      <div class="main_first">
+        <img id="picture" src="images/game-start-.jpg">
+      </div>
+      <div class="main_second">
+        <div class="attempt">
+          <h3>количество оставшихся попыток: <span id="amount_attempts"></span></h3>
+        </div>
+        <div class="click_button">
+        </div>
+      </div>
+    </div>
+
+    <div class="third_section">
+      <p>Таблица рекордов</p>
+    </div>
+
+
+  </div>
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script src="js/script.js"></script>
+</body>
+
+</html>
