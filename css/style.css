@@ -1,37 +1,40 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300&display=swap');
+
 body {
   background: linear-gradient(253.58deg, #FFC000 1.55%, #FF8A00 95.8%);
 }
 
-.wrapper{
+.wrapper {
   width: 950px;
   margin: 0 auto;
   font-family: 'Montserrat', sans-serif;
 }
 
-.first_section{
-text-align: center;
+.first_section {
+  text-align: center;
 }
-.rools{
+
+.rules {
   text-align: justify;
 }
+
 #secret_word {
   letter-spacing: 7px;
   font-size: 36px;
   line-height: 42px;
 }
 
-.second_section{
+.second_section {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start ; 
+  justify-content: flex-start;
   align-items: center;
 }
 
-#picture{
+#picture {
   padding: 20px;
 }
+
 .click {
   height: 40px;
   width: 60px;
@@ -41,18 +44,32 @@ text-align: center;
   background-color: rgb(255, 60, 0);
   color: azure;
 }
-.click_button{
+
+.click_button {
   width: 320px;
 }
 
-span{
+span {
   color: red;
 }
-.main_first{
-width: 500px;
+
+.main_first {
+  width: 500px;
 }
 
-.more{
+.btn_restart {
   width: 200px;
   margin-left: 30px;
+}
+
+.starter-picture {
+  text-align: center;
+}
+
+.timer {
+  width: 100px;
+  text-align: center;
+  font-size: 36px;
+  color: #6e0a31;
+  font-weight: 900;
 }

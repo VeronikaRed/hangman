@@ -5,7 +5,8 @@
 }
 
 function init() {
-    reload()
+    $('.starter-picture').remove();
+    reload();
     addAlphabet();
 }
 
@@ -17,20 +18,25 @@ function reload() {
     for (i = 1; i <= secretWord.length; i++) {
         word += "_";
     }
-    $("#amount_attempts").html(attempts);
+    $(".attempt").html(`<h3>количество оставшихся попыток: <span id="amount_attempts">${attempts}</span></h3>`);
     $("#secret_word").html(word);
+    interval = setInterval(function(){
+
+        
+        $('.timer').html(time++);
+    },100);
 }
 
 function addAlphabet() {
     for (let i = 0; i < arrAlphabetLetters.length; i++) {
-        $(".click_button").append(`<button class='click'>${arrAlphabetLetters[i]}</button>`);
+        $(".click_button").append(`<button class='click freeze'>${arrAlphabetLetters[i]}</button>`);
     }
-    listenerClick()
+    listenerClick();
 }
 
 function listenerClick() {
     $(".click").on("click", function (event) {
-        showLetter(event.target)
+        showLetter(event.target);
     })
 }
 
@@ -51,7 +57,7 @@ function showLetter(button) {
 
 function checkFinishWord() {
     if (secretWord == word) {
-        restart()
+        restart();
     }
 }
 
@@ -74,44 +80,49 @@ function differentPicture() {
     if (attempts > 0) {
         $('#picture').attr("src", "images/" + arrayPicture[attempts]);
     } else if (attempts == 0) {
-        $('#picture').attr("src", "images/" + arrayPicture[0]);
-        restart()
+        restart();
     }
 }
 
 function restart() {
     $('.main_first').append(`<div id="newNode"><div>Твое слово <b>${secretWord}</b>. 
     Ты использовал <b> ${7 - attempts}</b> попыток.
-    <button class="click more">Restart Game</button>
+    <button class="click btn_restart">Restart Game</button>
     </div></div>`);
-
-    
-    user.score = 7 - attempts;
-    $('.click').prop("disabled", true);
-    $('.more').prop("disabled", false);
-    $('.more').on('click', function () {
+    player.score = 7 - attempts;
+    player.time = time;
+    clearInterval(interval);
+    $('.freeze').prop("disabled", true);
+    $('.btn_restart').on('click', function() {
         deactivation();
     })
 }
 
 function deactivation() {
-    $('#picture').attr("src", "images/game-start-.jpg");
+    $('#picture').attr("src", "");
     $('.click').css('background', 'rgb(255, 60, 0)');
     $('.click').prop("disabled", false);
     $('#newNode').remove();
+    interval = null;
+    time = 0;
     reload();
 }
+
 let arrayPicture = ["1.png", "2.png", "3.png", "4.png", "5.png", "6.png", "7.png"];
 let arrayWords = ["солнце", "инструмент", "интересующий", "капитан", "воспользовался", "человек"];
 let attempts, numberSecretWord, secretWord, word;
 let arrAlphabetLetters = ["а", "б", "в", "г", "д", "е", "ё", "ж", "з", "и", "й",
     "к", "л", "м", "н", "о", "п", "р", "с", "т", "у", "ф", "х", "ц", "ч", "ш", "щ",
     "ъ", "ы", "ь", "э", "ю", "я"];
-let player = new Player(prompt('Enter your name', ' '));
+let player = new Player(prompt('Enter your name for the high score table', ' '));
 let players = [];
+let time = 0;
+let interval = null;
 players.push(player);
 
-$('.starter').on('click', function(){
+$('.starter-picture').on("click", function(){
     init();
 })
+
+
 
